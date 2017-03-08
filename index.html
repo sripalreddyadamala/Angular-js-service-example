@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html ng-app="myModule">
+<head>
+  <meta charset="utf-8">
+
+  <title>Angular services</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+</head>
+
+<body ng-controller="TodoController">
+<div>
+<h2>hello world</h2>
+<input type = "text" ng-model = "searchplayer">
+<table class = "table table-bordered">
+   <thead>
+      <tr>
+      <th>Player</th>
+      <th>Position</th>
+      <th>Number</th>
+      </tr>
+</thead>
+<tbody>
+<tr ng-repeat = "player in players | filter:searchplayer|orderBy:'-name'|limitTo:3">
+<td>{{player.name}}</td>
+<td>{{player.position}}</td>
+<td>{{player.number}}</td>
+</tr>
+</tbody>
+</table>
+<h2>button transclude</h2>
+<button-directive>
+<span class = "badge">&copy;2014</span>
+</button-directive>
+<div>
+ 
+</div>
+</div>
+  <script src="/bower_components/angular/angular.min.js"></script>
+   <script src=" /bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
